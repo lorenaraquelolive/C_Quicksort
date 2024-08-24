@@ -1,4 +1,15 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+#include <semaphore.h>
+
+sem_t semaphore;
+
+typedef struct {
+    int *arr;
+    long int low;
+    long int high;
+} quicksort_args;
 
 void swap(int* a, int* b) {
    int t = *a;
